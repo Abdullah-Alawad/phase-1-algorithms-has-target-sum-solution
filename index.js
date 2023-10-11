@@ -1,5 +1,11 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  const seenNumbers = {};
+  for(let i = 0; i<array.length; i++){
+    const comp = target - array[i];
+    if(seenNumbers[comp]) return true;
+    seenNumbers[array[i]] = true; 
+  }
+  return false;
 }
 
 /* 
